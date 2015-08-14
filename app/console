@@ -33,8 +33,6 @@ if ($debug) {
     $config = array(
         'access_token' => '196f4a12da204d4686f1eb96d0a36246',
         'environment' => $env,
-        'handler' => 'agent',
-        'agent_log_location' => $kernel->getLogDir()
     );
     Rollbar::init($config);
 }
