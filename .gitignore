@@ -1,0 +1,16 @@
+vendor/*
+.vagrant/*
+.idea
+.idea/*
+.DS_Store
+web/bundles/
+web/media/*
+app/bootstrap.php.cache
+app/cache/*
+app/config/**/parameters.yml
+!app/config/common/parameters.yml
+app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+vendor/
+bin/
