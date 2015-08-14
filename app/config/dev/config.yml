@@ -1,0 +1,11 @@
+imports:
+    - { resource: parameters.php }
+    - { resource: '../common/config.yml' }
+    - { resource: parameters.yml }
+
+framework:
+
+
+swiftmailer:
+    delivery_address: honza.trtik@gmail.com
+
