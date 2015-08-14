@@ -1,6 +1,11 @@
 imports:
     - { resource: '../common/config.yml' }
 
+doctrine:
+    dbal:
+        options:
+            1012 : "%kernel.root_dir%/../cert/amazon-rds-ca-cert.pem"
+
 monolog:
     handlers:
         main:
