@@ -1,6 +1,5 @@
 imports:
     - { resource: '../common/config.yml' }
-    - { resource: 'parameters.yml' }
 
 monolog:
     handlers:

@@ -1,6 +1,5 @@
 imports:
     - { resource: '../dev/config.yml' }
-    - { resource: 'parameters.yml' }
 
 framework:
 
