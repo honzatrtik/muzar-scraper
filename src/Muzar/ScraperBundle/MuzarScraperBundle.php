@@ -23,7 +23,6 @@ class MuzarScraperBundle extends Bundle
 			$em,
 			array(
 				'hudebnibazar' => new LinkIterator\Hudebnibazar(),
-				'midicz' => new LinkIterator\Midicz($goutte)
 			)
 		));
 
@@ -32,7 +31,6 @@ class MuzarScraperBundle extends Bundle
 			$goutte,
 			array(
 				'hudebnibazar' => new HtmlParser\Hudebnibazar(),
-				'midicz' => new HtmlParser\Midicz()
 			)
 		));
 
