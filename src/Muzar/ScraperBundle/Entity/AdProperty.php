@@ -35,7 +35,7 @@ class AdProperty
 	protected $name;
 
 	/**
-	 * @ORM\Column(type="string", nullable=true)
+	 * @ORM\Column(type="string", length=2048, nullable=true)
 	 */
 	protected $value;
 

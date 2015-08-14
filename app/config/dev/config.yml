@@ -1,5 +1,4 @@
 imports:
-    - { resource: parameters.php }
     - { resource: '../common/config.yml' }
     - { resource: parameters.yml }
 
