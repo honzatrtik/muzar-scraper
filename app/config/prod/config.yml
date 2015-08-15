@@ -1,11 +1,6 @@
 imports:
     - { resource: '../common/config.yml' }
 
-doctrine:
-    dbal:
-        options:
-            1012 : "%kernel.root_dir%/../cert/rds-ca-2015-eu-west-1.pem"
-
 monolog:
     handlers:
         main:
