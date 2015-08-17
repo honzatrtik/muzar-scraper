@@ -29,11 +29,15 @@ $kernel = new AppKernel($env, $debug);
 if ($debug) {
     Debug::enable();
 } else {
-    $config = array(
-        'access_token' => '196f4a12da204d4686f1eb96d0a36246',
-        'environment' => $env,
-    );
-    Rollbar::init($config);
+
+    $client = new \Raygun4php\RaygunClient($kernel->getContainer()->getParameter('raygun_apikey'));
+
+    set_error_handler(function($errno, $errstr, $errfile, $errline) use ($client) {
+        $client->SendError($errno, $errstr, $errfile, $errline);
+    });
+    set_exception_handler(function($exception) use ($client) {
+        $client->SendException($exception);
+    });
 }
 
 
