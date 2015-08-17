@@ -42,4 +42,11 @@ if ($debug) {
 
 
 $application = new Application($kernel);
+$application->register('test:raygun')
+    ->setCode(function(Input\InputInterface $input, Output\OutputInterface $output) {
+        user_error('User error message');
+        throw new \Exception('Exception message', 666);
+    });
+
+
 $application->run($input);
