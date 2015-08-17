@@ -17,7 +17,6 @@ class AppKernel extends Kernel
 
 		if ($this->getEnvironment() == 'prod')
 		{
-			$bundles[] = new Staffim\RollbarBundle\StaffimRollbarBundle();
 		}
 
 		if (php_sapi_name() === 'cli')
