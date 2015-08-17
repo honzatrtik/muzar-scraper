@@ -27,21 +27,12 @@ $debug = getenv('SYMFONY_DEBUG') !== '0' && !$input->hasParameterOption(array('-
 
 if ($debug) {
     Debug::enable();
-} else {
-
-    $raygunClient = new \Raygun4php\RaygunClient(getenv('RAYGUN_APIKEY'));
-    set_error_handler(function($errno, $errstr, $errfile, $errline) use ($raygunClient) {
-        $raygunClient->SendError($errno, $errstr, $errfile, $errline);
-    });
-    set_exception_handler(function($exception) use ($raygunClient) {
-        $raygunClient->SendException($exception);
-    });
 }
 
 
 $kernel = new AppKernel($env, $debug);
 $application = new Application($kernel);
-$application->register('test:raygun')
+$application->register('test:user-error-and-exception')
     ->setCode(function(Input\InputInterface $input, Output\OutputInterface $output) {
         user_error('User error message');
         throw new \Exception('Exception message', 666);

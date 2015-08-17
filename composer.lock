@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3fc318e7f0c0338e68cb28a2a59e3365",
+    "hash": "ef5f30107460f8b3e204f10388effb5e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -818,6 +818,112 @@
             "time": "2015-06-24 16:11:31"
         },
         {
+            "name": "ftrrtf/rollbar-bundle",
+            "version": "v0.7",
+            "target-dir": "Ftrrtf/RollbarBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ftrrtf/FtrrtfRollbarBundle.git",
+                "reference": "3185a7c988f84939e2925f79c7bfb4f952f4b5f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ftrrtf/FtrrtfRollbarBundle/zipball/3185a7c988f84939e2925f79c7bfb4f952f4b5f4",
+                "reference": "3185a7c988f84939e2925f79c7bfb4f952f4b5f4",
+                "shasum": ""
+            },
+            "require": {
+                "ftrrtf/rollbar-notifier": "~1.0",
+                "php": ">=5.3",
+                "symfony/framework-bundle": ">=2.3,<3.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "2.*"
+            },
+            "suggest": {
+                "twig/extensions": "~1.1 – For twig rollbarjs extension"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Ftrrtf\\RollbarBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Valeriy Rabievskiy",
+                    "email": "dev@ftrrtf.com"
+                }
+            ],
+            "description": "Symfony2 Bundle for rollbar.com",
+            "keywords": [
+                "Symfony2",
+                "errors",
+                "rollbar"
+            ],
+            "time": "2015-08-10 13:50:41"
+        },
+        {
+            "name": "ftrrtf/rollbar-notifier",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ftrrtf/rollbar-notifier.git",
+                "reference": "48289a6444f8c181aa93bff28b028cd607ad1b63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ftrrtf/rollbar-notifier/zipball/48289a6444f8c181aa93bff28b028cd607ad1b63",
+                "reference": "48289a6444f8c181aa93bff28b028cd607ad1b63",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "symfony/options-resolver": ">=2.1,<3.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "2.*"
+            },
+            "suggest": {
+                "ext-curl": "cUrl extension for cUrl transport"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ftrrtf\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Rue",
+                    "email": "brian@rollbar.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Valeriy Rabievskiy",
+                    "email": "dev@ftrrtf.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Monitors errors and exceptions and reports them to Rollbar",
+            "keywords": [
+                "debugging",
+                "errors",
+                "exceptions",
+                "logging",
+                "monitoring"
+            ],
+            "time": "2014-07-21 19:36:52"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "6.0.2",
             "source": {
@@ -1037,56 +1143,6 @@
                 "sql"
             ],
             "time": "2014-01-12 16:20:24"
-        },
-        {
-            "name": "mindscape/raygun4php",
-            "version": "v1.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/MindscapeHQ/raygun4php.git",
-                "reference": "c3a04ca69158b99fdd54095250c739a2f47d3294"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MindscapeHQ/raygun4php/zipball/c3a04ca69158b99fdd54095250c739a2f47d3294",
-                "reference": "c3a04ca69158b99fdd54095250c739a2f47d3294",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "suggest": {
-                "ext-curl": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Raygun4php": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mindscape",
-                    "email": "contact@mindscape.co.nz",
-                    "homepage": "http://www.mindscapehq.com"
-                }
-            ],
-            "description": "Raygun.io client for PHP 5.3, to send errors and exceptions automatically.",
-            "homepage": "http://raygun.io",
-            "keywords": [
-                "errors",
-                "exceptions",
-                "logging",
-                "raygun"
-            ],
-            "time": "2015-04-23 23:34:05"
         },
         {
             "name": "monolog/monolog",

@@ -15,13 +15,15 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
         );
 
+		if ($this->getEnvironment() == 'prod')
+		{
+			$bundles[] = new \Ftrrtf\RollbarBundle\FtrrtfRollbarBundle();
+		}
+
 		if (php_sapi_name() === 'cli')
 		{
 			$bundles[] = new Muzar\ScraperBundle\MuzarScraperBundle();
 		}
-
-		if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-        }
 
         return $bundles;
     }

@@ -16,8 +16,8 @@
         "symfony/monolog-bundle": "~2.4",
         "phpunit/phpunit": "4.*",
         "fabpot/goutte": "~3.1.0",
-        "mindscape/raygun4php": "1.*",
-        "sensio/distribution-bundle": "^4.0"
+        "sensio/distribution-bundle": "^4.0",
+        "ftrrtf/rollbar-bundle": "^0.7.0"
     },
     "scripts": {
         "post-install-cmd": [
