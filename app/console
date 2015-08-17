@@ -22,7 +22,6 @@ require_once __DIR__.'/AppKernel.php';
 $input = new ArgvInput();
 $env = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev');
 $debug = getenv('SYMFONY_DEBUG') !== '0' && !$input->hasParameterOption(array('--no-debug', '')) && $env !== 'prod';
-$kernel = new AppKernel($env, $debug);
 
 
 
@@ -30,17 +29,17 @@ if ($debug) {
     Debug::enable();
 } else {
 
-    $client = new \Raygun4php\RaygunClient($kernel->getContainer()->getParameter('raygun_apikey'));
-
-    set_error_handler(function($errno, $errstr, $errfile, $errline) use ($client) {
-        $client->SendError($errno, $errstr, $errfile, $errline);
+    $raygunClient = new \Raygun4php\RaygunClient(getenv('RAYGUN_APIKEY'));
+    set_error_handler(function($errno, $errstr, $errfile, $errline) use ($raygunClient) {
+        $raygunClient->SendError($errno, $errstr, $errfile, $errline);
     });
-    set_exception_handler(function($exception) use ($client) {
-        $client->SendException($exception);
+    set_exception_handler(function($exception) use ($raygunClient) {
+        $raygunClient->SendException($exception);
     });
 }
 
 
+$kernel = new AppKernel($env, $debug);
 $application = new Application($kernel);
 $application->register('test:raygun')
     ->setCode(function(Input\InputInterface $input, Output\OutputInterface $output) {
