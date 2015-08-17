@@ -62,13 +62,6 @@ services:
     goutte:
         class:  Goutte\Client
 
-
-ftrrtf_rollbar:
-    notifier:
-        server:
-            transport:
-                type: agent
-                access_token: %rollbar_server_access_token%
-                agent_log_location: %kernel.logs_dir%/%kernel.environment%.rollbar
-    environment:
-        environment: "[%kernel.environment%]"
+staffim_rollbar:
+    access_token: %rollbar_server_access_token%
+    error_level: -1
