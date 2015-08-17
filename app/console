@@ -25,12 +25,12 @@ $debug = getenv('SYMFONY_DEBUG') !== '0' && !$input->hasParameterOption(array('-
 
 
 
-if ($debug) {
+if ($debug)
+{
     Debug::enable();
 }
 
 
-$kernel = new AppKernel($env, $debug);
 $application = new Application($kernel);
 $application->register('test:user-error-and-exception')
     ->setCode(function(Input\InputInterface $input, Output\OutputInterface $output) {

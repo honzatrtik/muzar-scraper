@@ -62,6 +62,3 @@ services:
     goutte:
         class:  Goutte\Client
 
-staffim_rollbar:
-    access_token: %rollbar_server_access_token%
-    error_level: -1
